@@ -1,0 +1,11 @@
+C:\inetpub\wwwroot\JoFotra\SigmaJofotraAPICore.exe
+C:\inetpub\wwwroot\JoFotra\appsettings.Development.json
+C:\inetpub\wwwroot\JoFotra\appsettings.json
+C:\inetpub\wwwroot\JoFotra\SigmaJofotraAPICore.dll
+C:\inetpub\wwwroot\JoFotra\SigmaJofotraAPICore.deps.json
+C:\inetpub\wwwroot\JoFotra\SigmaJofotraAPICore.runtimeconfig.json
+C:\inetpub\wwwroot\JoFotra\SigmaJofotraAPICore.pdb
+C:\inetpub\wwwroot\JoFotra\Microsoft.OpenApi.dll
+C:\inetpub\wwwroot\JoFotra\Swashbuckle.AspNetCore.Swagger.dll
+C:\inetpub\wwwroot\JoFotra\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\inetpub\wwwroot\JoFotra\Swashbuckle.AspNetCore.SwaggerUI.dll

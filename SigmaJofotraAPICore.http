@@ -1,0 +1,7 @@
+@SigmaJofotraAPICore_HostAddress = http://localhost:5169
+POST {{SigmaJofotraAPICore_HostAddress}}/SigmaJofotraAPI/
+Accept: application/xml
+###
+POST {{SigmaJofotraAPICore_HostAddress}}/SigmaRefundJofotraAPI/
+Accept: application/xml
+###

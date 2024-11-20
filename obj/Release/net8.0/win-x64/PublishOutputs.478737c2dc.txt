@@ -1,0 +1,12 @@
+C:\Users\yousefa\source\repos\SigmaJofotraAPICore\SigmaJofotraAPICore\obj\Release\net8.0\win-x64\PubTmp\Out\SigmaJofotraAPICore.exe
+C:\Users\yousefa\source\repos\SigmaJofotraAPICore\SigmaJofotraAPICore\obj\Release\net8.0\win-x64\PubTmp\Out\appsettings.Development.json
+C:\Users\yousefa\source\repos\SigmaJofotraAPICore\SigmaJofotraAPICore\obj\Release\net8.0\win-x64\PubTmp\Out\appsettings.json
+C:\Users\yousefa\source\repos\SigmaJofotraAPICore\SigmaJofotraAPICore\obj\Release\net8.0\win-x64\PubTmp\Out\SigmaJofotraAPICore.dll
+C:\Users\yousefa\source\repos\SigmaJofotraAPICore\SigmaJofotraAPICore\obj\Release\net8.0\win-x64\PubTmp\Out\SigmaJofotraAPICore.deps.json
+C:\Users\yousefa\source\repos\SigmaJofotraAPICore\SigmaJofotraAPICore\obj\Release\net8.0\win-x64\PubTmp\Out\SigmaJofotraAPICore.runtimeconfig.json
+C:\Users\yousefa\source\repos\SigmaJofotraAPICore\SigmaJofotraAPICore\obj\Release\net8.0\win-x64\PubTmp\Out\SigmaJofotraAPICore.pdb
+C:\Users\yousefa\source\repos\SigmaJofotraAPICore\SigmaJofotraAPICore\obj\Release\net8.0\win-x64\PubTmp\Out\Microsoft.OpenApi.dll
+C:\Users\yousefa\source\repos\SigmaJofotraAPICore\SigmaJofotraAPICore\obj\Release\net8.0\win-x64\PubTmp\Out\Newtonsoft.Json.dll
+C:\Users\yousefa\source\repos\SigmaJofotraAPICore\SigmaJofotraAPICore\obj\Release\net8.0\win-x64\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\yousefa\source\repos\SigmaJofotraAPICore\SigmaJofotraAPICore\obj\Release\net8.0\win-x64\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\yousefa\source\repos\SigmaJofotraAPICore\SigmaJofotraAPICore\obj\Release\net8.0\win-x64\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll
