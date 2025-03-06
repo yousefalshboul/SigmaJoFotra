@@ -13,6 +13,7 @@ namespace SigmaJofotraAPICore.Controllers
         {
             _configuration = configuration;
         }
+
         [HttpPost(Name = "SigmaRefundJofotraAPI")]
         public Task<string> POST()
         {

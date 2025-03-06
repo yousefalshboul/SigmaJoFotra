@@ -23,6 +23,7 @@ namespace SigmaJofotraAPICore.Process
             string filename = "";
             string FatoraBatchFile = "";
             string responseBody = "";
+
             try
             {
                 files = System.IO.Directory.GetFiles(rootPath, "*." + extension);
@@ -42,16 +43,20 @@ namespace SigmaJofotraAPICore.Process
                         string N12 = Totalinvoice.SelectSingleNode("N12")?.InnerText;
                         if (N12 == "2")
                         {
-                            int vouno = 177668;
+                            int id = 177668;
+                            int vouno = Convert.ToInt32(Totalinvoice.SelectSingleNode("VOUNO")?.InnerText);
                             DateTime date = DateTime.Now;
                             string description = "Total";
                             double Discount = Convert.ToDouble(Totalinvoice.SelectSingleNode("DISCOUNT")?.InnerText);
                             double Total = Convert.ToDouble(Totalinvoice.SelectSingleNode("TOTAL")?.InnerText);
                             double TaxAmount = Convert.ToDouble(Totalinvoice.SelectSingleNode("TAX")?.InnerText);
                             double GTotal = Convert.ToDouble(Totalinvoice.SelectSingleNode("GTOTAL")?.InnerText);
-                            string TaxCode = Totalinvoice.SelectSingleNode("TAXCODE1")?.InnerText;
+                            string TaxCode = Totalinvoice.SelectSingleNode("TAXCODE")?.InnerText;
+                            string TaxCode1 = Totalinvoice.SelectSingleNode("TAXCODE1")?.InnerText;
+                            string BuyerName = Totalinvoice.SelectSingleNode("ACCNAME")?.InnerText;
+                            string BuyerID = Totalinvoice.SelectSingleNode("ACCNO")?.InnerText;
                             string Profile = "2932792";
-                            string UUID = Guid.NewGuid().ToString();
+                            string UUID = Totalinvoice.SelectSingleNode("IDSER")?.InnerText;
 
                             string IssueDt = date.ToString("yyyy-MM-dd");
 
@@ -69,10 +74,10 @@ namespace SigmaJofotraAPICore.Process
                             xmlTotalInvoice = @"<?xml version=""1.0"" encoding=""UTF-8""?>
 <Invoice xmlns=""urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"" xmlns:cac=""urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"" xmlns:cbc=""urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"" xmlns:ext=""urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"">
     <cbc:ProfileID>reporting:1.0</cbc:ProfileID>
-    <cbc:ID>#id#</cbc:ID>
+    <cbc:ID>#VOUNO#</cbc:ID>
     <cbc:UUID>#UUID#</cbc:UUID>
     <cbc:IssueDate>#IssueDt#</cbc:IssueDate>
-    <cbc:InvoiceTypeCode name=""012"">#TaxCode#</cbc:InvoiceTypeCode>
+    <cbc:InvoiceTypeCode name=""0#TaxCode#"">#TaxCode1#</cbc:InvoiceTypeCode>
     <cbc:Note>#description#</cbc:Note>
     <cbc:DocumentCurrencyCode>JOD</cbc:DocumentCurrencyCode>
     <cbc:TaxCurrencyCode>JOD</cbc:TaxCurrencyCode>
@@ -98,7 +103,32 @@ namespace SigmaJofotraAPICore.Process
             </cac:PartyLegalEntity>
         </cac:Party>
     </cac:AccountingSupplierParty>
-    <cac:AccountingCustomerParty />
+    <cac:AccountingCustomerParty>
+<cac:Party>
+<cac:PartyIdentification>
+<cbc:ID schemeID=""TN"">#BuyerID#</cbc:ID>
+</cac:PartyIdentification>
+<cac:PostalAddress>
+<cbc:PostalZone>33554</cbc:PostalZone>
+<cbc:CountrySubentityCode>JO-AZ</cbc:CountrySubentityCode>
+<cac:Country>
+<cbc:IdentificationCode>JO</cbc:IdentificationCode>
+</cac:Country>
+</cac:PostalAddress>
+<cac:PartyTaxScheme>
+<cbc:CompanyID>#BuyerID#</cbc:CompanyID>
+<cac:TaxScheme>
+<cbc:ID>VAT</cbc:ID>
+</cac:TaxScheme>
+</cac:PartyTaxScheme>
+<cac:PartyLegalEntity>
+<cbc:RegistrationName>#BuyerName#</cbc:RegistrationName>
+</cac:PartyLegalEntity>
+</cac:Party>
+<cac:AccountingContact>
+<cbc:Telephone>324323434</cbc:Telephone>
+</cac:AccountingContact>
+</cac:AccountingCustomerParty>
     <cac:SellerSupplierParty>
         <cac:Party>
         <cac:PartyIdentification>
@@ -121,7 +151,7 @@ namespace SigmaJofotraAPICore.Process
         <cbc:PayableAmount currencyID=""JO"">#TaxInclusiveAmount#</cbc:PayableAmount>
     </cac:LegalMonetaryTotal>";
                             xmlTotalInvoice = xmlTotalInvoice.Replace("#Profile#", Profile);
-                            xmlTotalInvoice = xmlTotalInvoice.Replace("#id#", vouno.ToString());
+                            xmlTotalInvoice = xmlTotalInvoice.Replace("#id#", id.ToString());
                             xmlTotalInvoice = xmlTotalInvoice.Replace("#UUID#", UUID);
                             xmlTotalInvoice = xmlTotalInvoice.Replace("#IssueDt#", IssueDt.ToString());
                             xmlTotalInvoice = xmlTotalInvoice.Replace("#TaxAmount#", TaxAmount.ToString());
@@ -130,6 +160,10 @@ namespace SigmaJofotraAPICore.Process
                             xmlTotalInvoice = xmlTotalInvoice.Replace("#TaxExclusiveAmount#", TaxExclusiveAmount.ToString());
                             xmlTotalInvoice = xmlTotalInvoice.Replace("#TaxInclusiveAmount#", TaxInclusiveAmount.ToString());
                             xmlTotalInvoice = xmlTotalInvoice.Replace("#TaxCode#", TaxCode.ToString());
+                            xmlTotalInvoice = xmlTotalInvoice.Replace("#TaxCode1#", TaxCode1.ToString());
+                            xmlTotalInvoice = xmlTotalInvoice.Replace("#VOUNO#", vouno.ToString());
+                            xmlTotalInvoice = xmlTotalInvoice.Replace("#BuyerName#", BuyerName);
+                            xmlTotalInvoice = xmlTotalInvoice.Replace("#BuyerID#", BuyerID);
                         }
                         else
                         {
@@ -330,7 +364,8 @@ namespace SigmaJofotraAPICore.Process
                         string N12 = Totalinvoice.SelectSingleNode("N12")?.InnerText;
                         if (N12 == "2")
                         {
-                            int vouno = 177668;
+                            int id = 177668;
+                            int vouno = Convert.ToInt32(Totalinvoice.SelectSingleNode("VOUNO")?.InnerText);
                             DateTime date = DateTime.Now;
                             string description = "Total";
                             double Discount = 0;
@@ -339,9 +374,13 @@ namespace SigmaJofotraAPICore.Process
                             double GTotal = Convert.ToDouble(Totalinvoice.SelectSingleNode("GTOTAL")?.InnerText);
                             string BuyerName = Totalinvoice.SelectSingleNode("ACCNAME")?.InnerText;
                             string BuyerID = Totalinvoice.SelectSingleNode("ACCNO")?.InnerText;
-                            string TaxCode = Totalinvoice.SelectSingleNode("TAXCODE1")?.InnerText;
+                            string TaxCode = Totalinvoice.SelectSingleNode("TAXCODE")?.InnerText;
+                            string TaxCode1 = Totalinvoice.SelectSingleNode("TAXCODE1")?.InnerText;
+                            string ReferenceId = Totalinvoice.SelectSingleNode("LASTINVNO")?.InnerText;
+                            string RefUUUID = Totalinvoice.SelectSingleNode("IDSERSAL")?.InnerText;
+                            string UUID = Totalinvoice.SelectSingleNode("IDSER")?.InnerText;
                             string Profile = "2932792";
-                            string UUID = Guid.NewGuid().ToString();
+
 
                             string IssueDt = date.ToString("yyyy-MM-dd");
 
@@ -358,14 +397,20 @@ namespace SigmaJofotraAPICore.Process
 
                             xmlTotalInvoice = @"<?xml version=""1.0"" encoding=""UTF-8""?>
 <Invoice xmlns=""urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"" xmlns:cac=""urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"" xmlns:cbc=""urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"" xmlns:ext=""urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"">
-    <cbc:ProfileID>reporting:1.0</cbc:ProfileID>
-    <cbc:ID>#id#</cbc:ID>
+    <cbc:ID>#VOUNO#</cbc:ID>
     <cbc:UUID>#UUID#</cbc:UUID>
     <cbc:IssueDate>#IssueDt#</cbc:IssueDate>
-    <cbc:InvoiceTypeCode name=""022"">#TaxCode#</cbc:InvoiceTypeCode>
+    <cbc:InvoiceTypeCode name=""0#TaxCode#"">#TaxCode1#</cbc:InvoiceTypeCode>
     <cbc:Note>#description#</cbc:Note>
     <cbc:DocumentCurrencyCode>JOD</cbc:DocumentCurrencyCode>
     <cbc:TaxCurrencyCode>JOD</cbc:TaxCurrencyCode>
+<cac:BillingReference> 
+<cac:InvoiceDocumentReference> 
+<cbc:ID>#ReferenceId#</cbc:ID> 
+<cbc:UUID>#REFUUID#</cbc:UUID> 
+<cbc:DocumentDescription>#GTotal#</cbc:DocumentDescription> 
+</cac:InvoiceDocumentReference> 
+</cac:BillingReference>
     <cac:AdditionalDocumentReference>
         <cbc:ID>ICV</cbc:ID>
         <cbc:UUID>#UUID#</cbc:UUID>
@@ -421,6 +466,10 @@ namespace SigmaJofotraAPICore.Process
         </cac:PartyIdentification>
         </cac:Party>
     </cac:SellerSupplierParty>
+<cac:PaymentMeans> 
+<cbc:PaymentMeansCode listID=""UN/ECE 4461"">10</cbc:PaymentMeansCode> 
+<cbc:InstructionNote>Item Expired</cbc:InstructionNote> 
+</cac:PaymentMeans>
     <cac:AllowanceCharge>
         <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
         <cbc:AllowanceChargeReason>discount</cbc:AllowanceChargeReason>
@@ -436,7 +485,7 @@ namespace SigmaJofotraAPICore.Process
         <cbc:PayableAmount currencyID=""JO"">#TaxInclusiveAmount#</cbc:PayableAmount>
     </cac:LegalMonetaryTotal>";
                             xmlTotalInvoice = xmlTotalInvoice.Replace("#Profile#", Profile);
-                            xmlTotalInvoice = xmlTotalInvoice.Replace("#id#", vouno.ToString());
+                            xmlTotalInvoice = xmlTotalInvoice.Replace("#id#", id.ToString());
                             xmlTotalInvoice = xmlTotalInvoice.Replace("#UUID#", UUID);
                             xmlTotalInvoice = xmlTotalInvoice.Replace("#IssueDt#", IssueDt.ToString());
                             xmlTotalInvoice = xmlTotalInvoice.Replace("#TaxAmount#", TaxAmount.ToString());
@@ -445,8 +494,14 @@ namespace SigmaJofotraAPICore.Process
                             xmlTotalInvoice = xmlTotalInvoice.Replace("#TaxExclusiveAmount#", TaxExclusiveAmount.ToString());
                             xmlTotalInvoice = xmlTotalInvoice.Replace("#TaxInclusiveAmount#", TaxInclusiveAmount.ToString());
                             xmlTotalInvoice = xmlTotalInvoice.Replace("#TaxCode#", TaxCode.ToString());
+                            xmlTotalInvoice = xmlTotalInvoice.Replace("#TaxCode1#", TaxCode1.ToString());
                             xmlTotalInvoice = xmlTotalInvoice.Replace("#BuyerID#", BuyerID);
                             xmlTotalInvoice = xmlTotalInvoice.Replace("#BuyerName#", BuyerName);
+                            xmlTotalInvoice = xmlTotalInvoice.Replace("#VOUNO#", vouno.ToString());
+                            xmlTotalInvoice = xmlTotalInvoice.Replace("#GTotal#", GTotal.ToString());
+                            xmlTotalInvoice = xmlTotalInvoice.Replace("#ReferenceId#", ReferenceId);
+                            xmlTotalInvoice = xmlTotalInvoice.Replace("#REFUUID#", RefUUUID);
+
                         }
                         else
                         {
