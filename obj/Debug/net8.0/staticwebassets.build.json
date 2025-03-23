@@ -1,12 +1,11 @@
 {
   "Version": 1,
-  "Hash": "9+Qmu7HLkQW07H6W/iH13/QvEbM+K6B2Q32psNqzDeU=",
+  "Hash": "5MRsMQpvJhvPumBpNlOb0mn2N1lW5BVVhT5IjmP7mcg=",
   "Source": "SigmaJofotraAPICore",
   "BasePath": "_content/SigmaJofotraAPICore",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
+  "Assets": []
 }

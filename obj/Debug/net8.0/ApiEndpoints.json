@@ -1,0 +1,44 @@
+[
+  {
+    "ContainingType": "SigmaJofotraAPICore.Controllers.SigmaJofotraAPIController",
+    "Method": "POST",
+    "RelativePath": "SigmaJofotraAPI",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "SigmaJofotraAPI"
+  },
+  {
+    "ContainingType": "SigmaJofotraAPICore.Controllers.SigmaRefundJofotraAPIController",
+    "Method": "POST",
+    "RelativePath": "SigmaRefundJofotraAPI",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "SigmaRefundJofotraAPI"
+  }
+]

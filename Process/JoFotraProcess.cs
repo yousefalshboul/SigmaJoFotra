@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System;
 using System.Configuration;
 using System.IO;
 using System.Net.Http;
@@ -280,8 +281,10 @@ namespace SigmaJofotraAPICore.Process
                         string jsonPayload = $"{{ \"invoice\": \"{encodedInvoice}\" }}";
                         string serverUrl = "https://backend.jofotara.gov.jo/core/invoices/";
                         HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, serverUrl);
-                        request.Headers.Add("Client-Id", "27e3f63a-e87c-47f8-a1c4-3bbdb0fe3598");
-                        request.Headers.Add("Secret-Key", "Gj5nS9wyYHRadaVffz5VKB4v4wlVWyPhcJvrTD4NHtO2kYWBiQezsd+n4D1gjx6rLOMFMfCLU5af1VrlYBxZzB6U8nf6v8zLcKeGVJ9Hc/KA+xcE7PkmY46xmJARPAsm81LR5x84Mxf5lyBsczZdDdUDHWWyQ/TXVIt5T72bMVB01j/4RihyIZk9eKUkgSSFGrC3xeOtH0kNIkbnGdpgYB+4BTdRhzbbZHDQIcyDTCBuTS/lt9BitGUe6doeKuzMfbnOO1zApU3465vkctfniQ==");
+                        string ClientId = _configuration["GeneralInformation:ClientId"];
+                        string SecretKey = _configuration["GeneralInformation:SecretKey"];
+                        request.Headers.Add("Client-Id", ClientId);
+                        request.Headers.Add("Secret-Key", SecretKey);
                         request.Content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
 
                         HttpResponseMessage response = await client.SendAsync(request);
@@ -621,8 +624,10 @@ namespace SigmaJofotraAPICore.Process
                         string jsonPayload = $"{{ \"invoice\": \"{encodedInvoice}\" }}";
                         string serverUrl = "https://backend.jofotara.gov.jo/core/invoices/";
                         HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, serverUrl);
-                        request.Headers.Add("Client-Id", "27e3f63a-e87c-47f8-a1c4-3bbdb0fe3598");
-                        request.Headers.Add("Secret-Key", "Gj5nS9wyYHRadaVffz5VKB4v4wlVWyPhcJvrTD4NHtO2kYWBiQezsd+n4D1gjx6rLOMFMfCLU5af1VrlYBxZzB6U8nf6v8zLcKeGVJ9Hc/KA+xcE7PkmY46xmJARPAsm81LR5x84Mxf5lyBsczZdDdUDHWWyQ/TXVIt5T72bMVB01j/4RihyIZk9eKUkgSSFGrC3xeOtH0kNIkbnGdpgYB+4BTdRhzbbZHDQIcyDTCBuTS/lt9BitGUe6doeKuzMfbnOO1zApU3465vkctfniQ==");
+                        string ClientId = _configuration["GeneralInformation:ClientId"];
+                        string SecretKey = _configuration["GeneralInformation:SecretKey"];
+                        request.Headers.Add("Client-Id", ClientId);
+                        request.Headers.Add("Secret-Key", SecretKey); 
                         request.Content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
 
                         HttpResponseMessage response = await client.SendAsync(request);
