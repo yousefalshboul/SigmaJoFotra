@@ -1,11 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using System;
-using System.Configuration;
-using System.IO;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
+using System.Text.Json;
 using System.Xml;
+using System.Drawing;
+using System.Drawing.Imaging;
+using QRCoder;
 
 namespace SigmaJofotraAPICore.Process
 {
@@ -19,11 +17,13 @@ namespace SigmaJofotraAPICore.Process
             string rootPath = _configuration["FatoraSettings:FatoraXmlPath"];
             string extension = _configuration["FatoraSettings:FileExtension"];
             string processedFilePath = _configuration["FatoraSettings:ProcessedFile"];
+            string QRFilePath = _configuration["FatoraSettings:QRFilePath"];
             string failedFilePath = _configuration["FatoraSettings:FailedFile"];
             string[] files;
             string filename = "";
             string FatoraBatchFile = "";
             string responseBody = "";
+            int vouno = 0;
 
             try
             {
@@ -45,7 +45,7 @@ namespace SigmaJofotraAPICore.Process
                         if (N12 == "2")
                         {
                             int id = Convert.ToInt32(_configuration["FatoraInfo:CustId"]);
-                            int vouno = Convert.ToInt32(Totalinvoice.SelectSingleNode("VOUNO")?.InnerText);
+                            vouno = Convert.ToInt32(Totalinvoice.SelectSingleNode("VOUNO")?.InnerText);
                             DateTime date = DateTime.Now;
                             string description = "Total";
                             double Discount = Convert.ToDouble(Totalinvoice.SelectSingleNode("DISCOUNT")?.InnerText);
@@ -184,7 +184,7 @@ namespace SigmaJofotraAPICore.Process
                         string N12 = invoice.SelectSingleNode("N12")?.InnerText;
                         if (N12 == "1")
                         {
-                            int vouno = Convert.ToInt32(invoice.SelectSingleNode("VOUNO")?.InnerText);
+                            vouno = Convert.ToInt32(invoice.SelectSingleNode("VOUNO")?.InnerText);
                             DateTime date = Convert.ToDateTime(invoice.SelectSingleNode("Date")?.InnerText);
                             string pers = invoice.SelectSingleNode("PERS")?.InnerText;
                             string salret = invoice.SelectSingleNode("SALRET")?.InnerText;
@@ -286,26 +286,36 @@ namespace SigmaJofotraAPICore.Process
                         request.Headers.Add("Client-Id", ClientId);
                         request.Headers.Add("Secret-Key", SecretKey);
                         request.Content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
-
+                        
                         HttpResponseMessage response = await client.SendAsync(request);
                         if (response.IsSuccessStatusCode)
                         {
                             responseBody = await response.Content.ReadAsStringAsync();
 
-                            // Move the file to failed path
+                            using JsonDocument doc = JsonDocument.Parse(responseBody);
+                            JsonElement root = doc.RootElement;
+                            if (root.TryGetProperty("EINV_QR", out JsonElement qrElement))
+                            {
+                                string qrData = qrElement.GetString();
+
+
+                                string qrCodePath = Path.Combine(QRFilePath, "Invoice_QR.png");
+                                GenerateQRCode(qrData, qrCodePath);
+                            }
+                            // Move the file to Success path
                             string todayFolder = Path.Combine(processedFilePath, DateTime.Now.ToString("yyyyMMdd"));
                             if (!Directory.Exists(todayFolder))
                             {
                                 Directory.CreateDirectory(todayFolder);
                             }
-                            string processedFileName = Path.Combine(todayFolder, DateTime.Now.ToString("yyyyMMdd_HHmmss") + "_" + filename);
+                            string processedFileName = Path.Combine(todayFolder, vouno.ToString()+ "_" + filename);
                             Directory.Move(FatoraBatchFile, processedFileName);
 
                             // Write request and response to the new folder
-                            string requestFilePath = Path.Combine(todayFolder, "Request_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".xml");
+                            string requestFilePath = Path.Combine(todayFolder, "Request_" + vouno.ToString()  + ".xml");
                             File.WriteAllText(requestFilePath, fullXml);
 
-                            string responseFilePath = Path.Combine(todayFolder, "Response_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".json");
+                            string responseFilePath = Path.Combine(todayFolder, "Response_" + vouno.ToString() + ".json");
                             File.WriteAllText(responseFilePath, responseBody);
                         }
                         else
@@ -318,14 +328,14 @@ namespace SigmaJofotraAPICore.Process
                             {
                                 Directory.CreateDirectory(todayFolder);
                             }
-                            string processedFileName = Path.Combine(todayFolder, DateTime.Now.ToString("yyyyMMdd_HHmmss") + "_" + filename);
+                            string processedFileName = Path.Combine(todayFolder, vouno.ToString() + "_" + filename);
                             Directory.Move(FatoraBatchFile, processedFileName);
 
                             // Write request and response to the new folder
-                            string requestFilePath = Path.Combine(todayFolder, "Request_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".xml");
+                            string requestFilePath = Path.Combine(todayFolder, "Request_" + vouno.ToString() + ".xml");
                             File.WriteAllText(requestFilePath, fullXml);
 
-                            string responseFilePath = Path.Combine(todayFolder, "Response_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".json");
+                            string responseFilePath = Path.Combine(todayFolder, "Response_" + vouno.ToString() + ".json");
                             File.WriteAllText(responseFilePath, responseBody);
                         }
                     }
@@ -337,7 +347,18 @@ namespace SigmaJofotraAPICore.Process
                 return ex.ToString();
             }
         }
-
+        static void GenerateQRCode(string qrData, string qrCodePath)
+        {
+            using (QRCodeGenerator qrGenerator = new QRCodeGenerator())
+            {
+                QRCodeData qrCodeData = qrGenerator.CreateQrCode(qrData, QRCodeGenerator.ECCLevel.Q);
+                // Correct instantiation of QRCode
+                PngByteQRCode qrCode = new PngByteQRCode(qrCodeData);
+                byte[] qrCodeBytes = qrCode.GetGraphic(20); // Generates PNG as byte array
+                // ✅ Save the byte array as an image
+                System.IO.File.WriteAllBytes(qrCodePath, qrCodeBytes);
+            }
+        }
         public async Task<string> processRefundJoFotra(IConfiguration _configuration)
         {
             string xmlTotalInvoice = "";
@@ -346,11 +367,13 @@ namespace SigmaJofotraAPICore.Process
             string RefundrootPath = _configuration["FatoraSettings:RefundFatoraXmlPath"];
             string extension = _configuration["FatoraSettings:FileExtension"];
             string RefundprocessedFilePath = _configuration["FatoraSettings:RefundProcessedFile"];
+            string QRFilePath = _configuration["FatoraSettings:QRFilePath"];
             string RefundfailedFilePath = _configuration["FatoraSettings:RefundFailedFile"];
             string[] files;
             string filename = "";
             string FatoraBatchFile = "";
             string responseBody = "";
+            int vouno = 0;
             try
             {
                 files = System.IO.Directory.GetFiles(RefundrootPath, "*." + extension);
@@ -371,7 +394,7 @@ namespace SigmaJofotraAPICore.Process
                         if (N12 == "2")
                         {
                             int id = Convert.ToInt32(_configuration["FatoraInfo:CustId"]);
-                            int vouno = Convert.ToInt32(Totalinvoice.SelectSingleNode("VOUNO")?.InnerText);
+                            vouno = Convert.ToInt32(Totalinvoice.SelectSingleNode("VOUNO")?.InnerText);
                             DateTime date = DateTime.Now;
                             string description = "Total";
                             double Discount = 0;
@@ -526,7 +549,7 @@ namespace SigmaJofotraAPICore.Process
                         string N12 = invoice.SelectSingleNode("N12")?.InnerText;
                         if (N12 == "1")
                         {
-                            int vouno = Convert.ToInt32(invoice.SelectSingleNode("VOUNO")?.InnerText);
+                            vouno = Convert.ToInt32(invoice.SelectSingleNode("VOUNO")?.InnerText);
                             DateTime date = Convert.ToDateTime(invoice.SelectSingleNode("Date")?.InnerText);
                             string pers = invoice.SelectSingleNode("PERS")?.InnerText;
                             string salret = invoice.SelectSingleNode("SALRET")?.InnerText;
@@ -543,7 +566,6 @@ namespace SigmaJofotraAPICore.Process
                             double TaxAmount = Convert.ToDouble(invoice.SelectSingleNode("TAX")?.InnerText);
                             double GTotal = Convert.ToDouble(invoice.SelectSingleNode("GTOTAL")?.InnerText);
                             string TaxCode = invoice.SelectSingleNode("TAXCODE1")?.InnerText;
-                            string UUID = Guid.NewGuid().ToString();
                             string IssueDt = date.ToString("yyyy-MM-dd");
 
                             cost = Math.Round(cost, 9);
@@ -594,7 +616,6 @@ namespace SigmaJofotraAPICore.Process
     </cac:InvoiceLine>";
                             xmlInvoiceContent = xmlInvoiceContent.Replace("#itemno#", itemno);
                             xmlInvoiceContent = xmlInvoiceContent.Replace("#id#", vouno.ToString());
-                            xmlInvoiceContent = xmlInvoiceContent.Replace("#UUID#", UUID);
                             xmlInvoiceContent = xmlInvoiceContent.Replace("#IssueDt#", IssueDt.ToString());
                             xmlInvoiceContent = xmlInvoiceContent.Replace("#Amount#", Total.ToString());
                             xmlInvoiceContent = xmlInvoiceContent.Replace("#TaxAmount#", TaxAmount.ToString());
@@ -634,21 +655,30 @@ namespace SigmaJofotraAPICore.Process
                         if (response.IsSuccessStatusCode)
                         {
                             responseBody = await response.Content.ReadAsStringAsync();
+                            using JsonDocument doc = JsonDocument.Parse(responseBody);
+                            JsonElement root = doc.RootElement;
+                            if (root.TryGetProperty("EINV_QR", out JsonElement qrElement))
+                            {
+                                string qrData = qrElement.GetString();
 
-                            // Move the file to failed path
+
+                                string qrCodePath = Path.Combine(QRFilePath, "Invoice_QR.png");
+                                GenerateQRCode(qrData, qrCodePath);
+                            }
+                            // Move the file to Success path
                             string todayFolder = Path.Combine(RefundprocessedFilePath, DateTime.Now.ToString("yyyyMMdd"));
                             if (!Directory.Exists(todayFolder))
                             {
                                 Directory.CreateDirectory(todayFolder);
                             }
-                            string processedFileName = Path.Combine(todayFolder, DateTime.Now.ToString("yyyyMMdd_HHmmss") + "_" + filename);
+                            string processedFileName = Path.Combine(todayFolder, vouno.ToString() + "_" + filename);
                             Directory.Move(FatoraBatchFile, processedFileName);
 
                             // Write request and response to the new folder
-                            string requestFilePath = Path.Combine(todayFolder, "Request_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".xml");
+                            string requestFilePath = Path.Combine(todayFolder, "Request_" + vouno.ToString() + ".xml");
                             File.WriteAllText(requestFilePath, fullXml);
 
-                            string responseFilePath = Path.Combine(todayFolder, "Response_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".json");
+                            string responseFilePath = Path.Combine(todayFolder, "Response_" + vouno.ToString() + ".json");
                             File.WriteAllText(responseFilePath, responseBody);
                         }
                         else
@@ -661,14 +691,14 @@ namespace SigmaJofotraAPICore.Process
                             {
                                 Directory.CreateDirectory(todayFolder);
                             }
-                            string processedFileName = Path.Combine(todayFolder, DateTime.Now.ToString("yyyyMMdd_HHmmss") + "_" + filename);
+                            string processedFileName = Path.Combine(todayFolder, vouno.ToString() + "_" + filename);
                             Directory.Move(FatoraBatchFile, processedFileName);
 
                             // Write request and response to the new folder
-                            string requestFilePath = Path.Combine(todayFolder, "Request_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".xml");
+                            string requestFilePath = Path.Combine(todayFolder, "Request_" + vouno.ToString() + ".xml");
                             File.WriteAllText(requestFilePath, fullXml);
 
-                            string responseFilePath = Path.Combine(todayFolder, "Response_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".json");
+                            string responseFilePath = Path.Combine(todayFolder, "Response_" + vouno.ToString() + ".json");
                             File.WriteAllText(responseFilePath, responseBody);
                         }
                     }
