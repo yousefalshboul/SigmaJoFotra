@@ -1,0 +1,70 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "SigmaJofotraAPICore",
+    "version": "1.0"
+  },
+  "paths": {
+    "/SigmaJofotraAPI": {
+      "post": {
+        "tags": [
+          "SigmaJofotraAPI"
+        ],
+        "operationId": "SigmaJofotraAPI",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/SigmaRefundJofotraAPI": {
+      "post": {
+        "tags": [
+          "SigmaRefundJofotraAPI"
+        ],
+        "operationId": "SigmaRefundJofotraAPI",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": { }
+}

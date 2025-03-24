@@ -50,20 +50,6 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[9.0.2, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[9.0.2, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[9.0.2, )"
-            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
@@ -71,14 +57,6 @@
             "QRCoder": {
               "target": "Package",
               "version": "[1.6.0, )"
-            },
-            "SkiaSharp": {
-              "target": "Package",
-              "version": "[3.116.1, )"
-            },
-            "SkiaSharp.QrCode": {
-              "target": "Package",
-              "version": "[0.7.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -95,10 +73,6 @@
             "System.Runtime.Extensions": {
               "target": "Package",
               "version": "[4.3.1, )"
-            },
-            "ZXing.Net": {
-              "target": "Package",
-              "version": "[0.16.10, )"
             }
           },
           "imports": [

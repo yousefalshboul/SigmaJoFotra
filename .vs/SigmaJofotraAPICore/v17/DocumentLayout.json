@@ -3,6 +3,13 @@
   "WorkspaceRootPath": "C:\\Users\\yousefa\\source\\repos\\SigmaJofotraAPICore\\SigmaJofotraAPICore\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1E23E053-C33F-43DF-A5E5-03E083CECE07}|..\\Testing\\Testing.csproj|c:\\users\\yousefa\\source\\repos\\sigmajofotraapicore\\testing\\testing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6334C9B-4CFA-49B1-A7C8-F6A0F6AF07EB}|SigmaJofotraAPICore.csproj|c:\\users\\yousefa\\source\\repos\\sigmajofotraapicore\\sigmajofotraapicore\\process\\jofotraprocess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6334C9B-4CFA-49B1-A7C8-F6A0F6AF07EB}|SigmaJofotraAPICore.csproj|solutionrelative:process\\jofotraprocess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B6334C9B-4CFA-49B1-A7C8-F6A0F6AF07EB}|SigmaJofotraAPICore.csproj|c:\\users\\yousefa\\source\\repos\\sigmajofotraapicore\\sigmajofotraapicore\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{B6334C9B-4CFA-49B1-A7C8-F6A0F6AF07EB}|SigmaJofotraAPICore.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
@@ -14,32 +21,55 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "testing.cs",
+              "DocumentMoniker": "C:\\Users\\yousefa\\source\\repos\\SigmaJofotraAPICore\\Testing\\testing.cs",
+              "RelativeDocumentMoniker": "..\\Testing\\testing.cs",
+              "ToolTip": "C:\\Users\\yousefa\\source\\repos\\SigmaJofotraAPICore\\Testing\\testing.cs",
+              "RelativeToolTip": "..\\Testing\\testing.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAwwCAAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T09:43:04.581Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:11:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "JoFotraProcess.cs",
+              "DocumentMoniker": "C:\\Users\\yousefa\\source\\repos\\SigmaJofotraAPICore\\SigmaJofotraAPICore\\Process\\JoFotraProcess.cs",
+              "RelativeDocumentMoniker": "Process\\JoFotraProcess.cs",
+              "ToolTip": "C:\\Users\\yousefa\\source\\repos\\SigmaJofotraAPICore\\SigmaJofotraAPICore\\Process\\JoFotraProcess.cs",
+              "RelativeToolTip": "Process\\JoFotraProcess.cs",
+              "ViewState": "AgIAABgBAAAAAAAAAAAtwCQBAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T09:35:02.068Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\yousefa\\source\\repos\\SigmaJofotraAPICore\\SigmaJofotraAPICore\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
               "ToolTip": "C:\\Users\\yousefa\\source\\repos\\SigmaJofotraAPICore\\SigmaJofotraAPICore\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABgAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-03-24T09:28:08.682Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             }
           ]
         }
