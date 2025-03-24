@@ -354,7 +354,7 @@ namespace SigmaJofotraAPICore.Process
                 QRCodeData qrCodeData = qrGenerator.CreateQrCode(qrData, QRCodeGenerator.ECCLevel.Q);
                 // Correct instantiation of QRCode
                 PngByteQRCode qrCode = new PngByteQRCode(qrCodeData);
-                byte[] qrCodeBytes = qrCode.GetGraphic(20); // Generates PNG as byte array
+                byte[] qrCodeBytes = qrCode.GetGraphic(5); // Generates PNG as byte array
                 // ✅ Save the byte array as an image
                 System.IO.File.WriteAllBytes(qrCodePath, qrCodeBytes);
             }
