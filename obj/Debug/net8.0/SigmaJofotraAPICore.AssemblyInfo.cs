@@ -14,7 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SigmaJofotraAPICore")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+74881b6f53b25088c518a50dedb4ccc0ab441e81")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+269bf0a8429e52fe8175b6f2d4c5549d50d7ee0b")]
+>>>>>>> f5751649c7214cc367b1d5dd21dab574d8db58d0
 [assembly: System.Reflection.AssemblyProductAttribute("SigmaJofotraAPICore")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SigmaJofotraAPICore")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
