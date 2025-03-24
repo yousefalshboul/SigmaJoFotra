@@ -3,25 +3,16 @@
   "WorkspaceRootPath": "C:\\Work\\SigmaJoFotra\\",
   "Documents": [
     {
-<<<<<<< HEAD
+      "AbsoluteMoniker": "D:0:0:{B6334C9B-4CFA-49B1-A7C8-F6A0F6AF07EB}|SigmaJofotraAPICore.csproj|c:\\work\\sigmajofotra\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6334C9B-4CFA-49B1-A7C8-F6A0F6AF07EB}|SigmaJofotraAPICore.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B6334C9B-4CFA-49B1-A7C8-F6A0F6AF07EB}|SigmaJofotraAPICore.csproj|c:\\work\\sigmajofotra\\process\\jofotraprocess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B6334C9B-4CFA-49B1-A7C8-F6A0F6AF07EB}|SigmaJofotraAPICore.csproj|solutionrelative:process\\jofotraprocess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B6334C9B-4CFA-49B1-A7C8-F6A0F6AF07EB}|SigmaJofotraAPICore.csproj|c:\\work\\sigmajofotra\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{B6334C9B-4CFA-49B1-A7C8-F6A0F6AF07EB}|SigmaJofotraAPICore.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B6334C9B-4CFA-49B1-A7C8-F6A0F6AF07EB}|SigmaJofotraAPICore.csproj|c:\\work\\sigmajofotra\\controllers\\sigmajofotraapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B6334C9B-4CFA-49B1-A7C8-F6A0F6AF07EB}|SigmaJofotraAPICore.csproj|solutionrelative:controllers\\sigmajofotraapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B6334C9B-4CFA-49B1-A7C8-F6A0F6AF07EB}|SigmaJofotraAPICore.csproj|c:\\work\\sigmajofotra\\controllers\\sigmarefundjofotraapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B6334C9B-4CFA-49B1-A7C8-F6A0F6AF07EB}|SigmaJofotraAPICore.csproj|solutionrelative:controllers\\sigmarefundjofotraapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-=======
-      "AbsoluteMoniker": "D:0:0:{B6334C9B-4CFA-49B1-A7C8-F6A0F6AF07EB}|SigmaJofotraAPICore.csproj|c:\\users\\yousefa\\source\\repos\\sigmajofotraapicore\\sigmajofotraapicore\\process\\jofotraprocess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B6334C9B-4CFA-49B1-A7C8-F6A0F6AF07EB}|SigmaJofotraAPICore.csproj|solutionrelative:process\\jofotraprocess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
->>>>>>> f5751649c7214cc367b1d5dd21dab574d8db58d0
     }
   ],
   "DocumentGroupContainers": [
@@ -31,11 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-<<<<<<< HEAD
           "SelectedChildIndex": 4,
-=======
-          "SelectedChildIndex": 2,
->>>>>>> f5751649c7214cc367b1d5dd21dab574d8db58d0
           "Children": [
             {
               "$type": "Bookmark",
@@ -56,54 +43,41 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "JoFotraProcess.cs",
-              "DocumentMoniker": "C:\\Work\\SigmaJoFotra\\Process\\JoFotraProcess.cs",
-              "RelativeDocumentMoniker": "Process\\JoFotraProcess.cs",
-              "ToolTip": "C:\\Work\\SigmaJoFotra\\Process\\JoFotraProcess.cs",
-              "RelativeToolTip": "Process\\JoFotraProcess.cs",
-              "ViewState": "AgIAAFYBAAAAAAAAAAAAALwCAAB6AAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Work\\SigmaJoFotra\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Work\\SigmaJoFotra\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T09:22:33.249Z",
+              "WhenOpened": "2025-03-24T21:03:33.067Z",
               "EditorCaption": ""
-<<<<<<< HEAD
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Work\\SigmaJoFotra\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
               "ToolTip": "C:\\Work\\SigmaJoFotra\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA4AAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-21T14:44:34.88Z"
+              "WhenOpened": "2025-03-24T20:02:13.738Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SigmaRefundJofotraAPIController.cs",
-              "DocumentMoniker": "C:\\Work\\SigmaJoFotra\\Controllers\\SigmaRefundJofotraAPIController.cs",
-              "RelativeDocumentMoniker": "Controllers\\SigmaRefundJofotraAPIController.cs",
-              "ToolTip": "C:\\Work\\SigmaJoFotra\\Controllers\\SigmaRefundJofotraAPIController.cs",
-              "RelativeToolTip": "Controllers\\SigmaRefundJofotraAPIController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAATAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "JoFotraProcess.cs",
+              "DocumentMoniker": "C:\\Work\\SigmaJoFotra\\Process\\JoFotraProcess.cs",
+              "RelativeDocumentMoniker": "Process\\JoFotraProcess.cs",
+              "ToolTip": "C:\\Work\\SigmaJoFotra\\Process\\JoFotraProcess.cs",
+              "RelativeToolTip": "Process\\JoFotraProcess.cs",
+              "ViewState": "AgIAAFIBAAAAAAAAAAAAAFoBAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T13:16:00.298Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SigmaJofotraAPIController.cs",
-              "DocumentMoniker": "C:\\Work\\SigmaJoFotra\\Controllers\\SigmaJofotraAPIController.cs",
-              "RelativeDocumentMoniker": "Controllers\\SigmaJofotraAPIController.cs",
-              "ToolTip": "C:\\Work\\SigmaJoFotra\\Controllers\\SigmaJofotraAPIController.cs",
-              "RelativeToolTip": "Controllers\\SigmaJofotraAPIController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBYAAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T13:15:37.021Z"
-=======
->>>>>>> f5751649c7214cc367b1d5dd21dab574d8db58d0
+              "WhenOpened": "2025-03-24T19:44:11.199Z",
+              "EditorCaption": ""
             }
           ]
         }
