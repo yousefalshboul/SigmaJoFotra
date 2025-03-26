@@ -1,18 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Work\\SigmaJoFotra\\",
+  "WorkspaceRootPath": "C:\\Users\\yousefa\\source\\repos\\SigmaJofotraAPICore\\SigmaJofotraAPICore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B6334C9B-4CFA-49B1-A7C8-F6A0F6AF07EB}|SigmaJofotraAPICore.csproj|c:\\work\\sigmajofotra\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{B6334C9B-4CFA-49B1-A7C8-F6A0F6AF07EB}|SigmaJofotraAPICore.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{B6334C9B-4CFA-49B1-A7C8-F6A0F6AF07EB}|SigmaJofotraAPICore.csproj|c:\\users\\yousefa\\source\\repos\\sigmajofotraapicore\\sigmajofotraapicore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6334C9B-4CFA-49B1-A7C8-F6A0F6AF07EB}|SigmaJofotraAPICore.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B6334C9B-4CFA-49B1-A7C8-F6A0F6AF07EB}|SigmaJofotraAPICore.csproj|c:\\work\\sigmajofotra\\process\\jofotraprocess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B6334C9B-4CFA-49B1-A7C8-F6A0F6AF07EB}|SigmaJofotraAPICore.csproj|c:\\users\\yousefa\\source\\repos\\sigmajofotraapicore\\sigmajofotraapicore\\process\\jofotraprocess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B6334C9B-4CFA-49B1-A7C8-F6A0F6AF07EB}|SigmaJofotraAPICore.csproj|solutionrelative:process\\jofotraprocess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B6334C9B-4CFA-49B1-A7C8-F6A0F6AF07EB}|SigmaJofotraAPICore.csproj|c:\\work\\sigmajofotra\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B6334C9B-4CFA-49B1-A7C8-F6A0F6AF07EB}|SigmaJofotraAPICore.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B6334C9B-4CFA-49B1-A7C8-F6A0F6AF07EB}|SigmaJofotraAPICore.csproj|c:\\users\\yousefa\\source\\repos\\sigmajofotraapicore\\sigmajofotraapicore\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B6334C9B-4CFA-49B1-A7C8-F6A0F6AF07EB}|SigmaJofotraAPICore.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,11 +22,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "Name": "ST:11:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
             },
             {
               "$type": "Bookmark",
@@ -37,44 +37,39 @@
               "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:11:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Work\\SigmaJoFotra\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\yousefa\\source\\repos\\SigmaJofotraAPICore\\SigmaJofotraAPICore\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Work\\SigmaJoFotra\\Program.cs",
+              "ToolTip": "C:\\Users\\yousefa\\source\\repos\\SigmaJofotraAPICore\\SigmaJofotraAPICore\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-24T21:03:33.067Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Work\\SigmaJoFotra\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\yousefa\\source\\repos\\SigmaJofotraAPICore\\SigmaJofotraAPICore\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Work\\SigmaJoFotra\\appsettings.json",
+              "ToolTip": "C:\\Users\\yousefa\\source\\repos\\SigmaJofotraAPICore\\SigmaJofotraAPICore\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-24T20:02:13.738Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-24T20:02:13.738Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "JoFotraProcess.cs",
-              "DocumentMoniker": "C:\\Work\\SigmaJoFotra\\Process\\JoFotraProcess.cs",
+              "DocumentMoniker": "C:\\Users\\yousefa\\source\\repos\\SigmaJofotraAPICore\\SigmaJofotraAPICore\\Process\\JoFotraProcess.cs",
               "RelativeDocumentMoniker": "Process\\JoFotraProcess.cs",
-              "ToolTip": "C:\\Work\\SigmaJoFotra\\Process\\JoFotraProcess.cs",
+              "ToolTip": "C:\\Users\\yousefa\\source\\repos\\SigmaJofotraAPICore\\SigmaJofotraAPICore\\Process\\JoFotraProcess.cs",
               "RelativeToolTip": "Process\\JoFotraProcess.cs",
-              "ViewState": "AgIAABMBAAAAAAAAAAAAAFoBAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAALUAAAAAAAAAAAAwwMMAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-24T19:44:11.199Z",
               "EditorCaption": ""

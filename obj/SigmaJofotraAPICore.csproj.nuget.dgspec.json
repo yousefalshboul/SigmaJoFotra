@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Work\\SigmaJoFotra\\SigmaJofotraAPICore.csproj": {}
+    "C:\\Users\\yousefa\\source\\repos\\SigmaJofotraAPICore\\SigmaJofotraAPICore\\SigmaJofotraAPICore.csproj": {}
   },
   "projects": {
-    "C:\\Work\\SigmaJoFotra\\SigmaJofotraAPICore.csproj": {
+    "C:\\Users\\yousefa\\source\\repos\\SigmaJofotraAPICore\\SigmaJofotraAPICore\\SigmaJofotraAPICore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Work\\SigmaJoFotra\\SigmaJofotraAPICore.csproj",
+        "projectUniqueName": "C:\\Users\\yousefa\\source\\repos\\SigmaJofotraAPICore\\SigmaJofotraAPICore\\SigmaJofotraAPICore.csproj",
         "projectName": "SigmaJofotraAPICore",
-        "projectPath": "C:\\Work\\SigmaJoFotra\\SigmaJofotraAPICore.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Work\\SigmaJoFotra\\obj\\",
+        "projectPath": "C:\\Users\\yousefa\\source\\repos\\SigmaJofotraAPICore\\SigmaJofotraAPICore\\SigmaJofotraAPICore.csproj",
+        "packagesPath": "C:\\Users\\yousefa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\yousefa\\source\\repos\\SigmaJofotraAPICore\\SigmaJofotraAPICore\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\yousefa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -40,7 +43,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -90,7 +94,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.104/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -35,7 +35,6 @@ C:\Users\yousefa\source\repos\SigmaJofotraAPICore\SigmaJofotraAPICore\bin\Debug\
 C:\Users\yousefa\source\repos\SigmaJofotraAPICore\SigmaJofotraAPICore\bin\Debug\net8.0\SigmaJofotraAPICore.staticwebassets.endpoints.json
 C:\Users\yousefa\source\repos\SigmaJofotraAPICore\SigmaJofotraAPICore\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 C:\Users\yousefa\source\repos\SigmaJofotraAPICore\SigmaJofotraAPICore\obj\Debug\net8.0\staticwebassets\msbuild.SigmaJofotraAPICore.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-C:\Users\yousefa\source\repos\SigmaJofotraAPICore\SigmaJofotraAPICore\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Work\SigmaJoFotra\bin\Debug\net8.0\appsettings.Development.json
 C:\Work\SigmaJoFotra\bin\Debug\net8.0\appsettings.json
 C:\Work\SigmaJoFotra\bin\Debug\net8.0\SigmaJofotraAPICore.exe
@@ -80,3 +79,4 @@ C:\Users\yousefa\source\repos\SigmaJofotraAPICore\SigmaJofotraAPICore\bin\Debug\
 C:\Users\yousefa\source\repos\SigmaJofotraAPICore\SigmaJofotraAPICore\bin\Debug\net8.0\System.Drawing.Common.dll
 C:\Users\yousefa\source\repos\SigmaJofotraAPICore\SigmaJofotraAPICore\bin\Debug\net8.0\System.Private.Windows.Core.dll
 C:\Users\yousefa\source\repos\SigmaJofotraAPICore\SigmaJofotraAPICore\bin\Debug\net8.0\runtimes\win\lib\net8.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\yousefa\source\repos\SigmaJofotraAPICore\SigmaJofotraAPICore\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

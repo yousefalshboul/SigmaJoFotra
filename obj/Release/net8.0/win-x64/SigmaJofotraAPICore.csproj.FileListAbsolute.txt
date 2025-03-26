@@ -70,3 +70,11 @@ C:\Work\SigmaJoFotra\obj\Release\net8.0\win-x64\SigmaJofotraAPICore.genruntimeco
 C:\Work\SigmaJoFotra\obj\Release\net8.0\win-x64\ref\SigmaJofotraAPICore.dll
 C:\Work\SigmaJoFotra\bin\Release\net8.0\win-x64\QRCoder.dll
 C:\Work\SigmaJoFotra\bin\Release\net8.0\win-x64\System.Private.Windows.Core.dll
+C:\Users\yousefa\source\repos\SigmaJofotraAPICore\SigmaJofotraAPICore\bin\Release\net8.0\win-x64\SigmaJofotraAPICore.staticwebassets.endpoints.json
+C:\Users\yousefa\source\repos\SigmaJofotraAPICore\SigmaJofotraAPICore\bin\Release\net8.0\win-x64\Microsoft.Win32.SystemEvents.dll
+C:\Users\yousefa\source\repos\SigmaJofotraAPICore\SigmaJofotraAPICore\bin\Release\net8.0\win-x64\QRCoder.dll
+C:\Users\yousefa\source\repos\SigmaJofotraAPICore\SigmaJofotraAPICore\bin\Release\net8.0\win-x64\System.Drawing.Common.dll
+C:\Users\yousefa\source\repos\SigmaJofotraAPICore\SigmaJofotraAPICore\bin\Release\net8.0\win-x64\System.Private.Windows.Core.dll
+C:\Users\yousefa\source\repos\SigmaJofotraAPICore\SigmaJofotraAPICore\obj\Release\net8.0\win-x64\staticwebassets.build.endpoints.json
+C:\Users\yousefa\source\repos\SigmaJofotraAPICore\SigmaJofotraAPICore\obj\Release\net8.0\win-x64\staticwebassets\msbuild.SigmaJofotraAPICore.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\yousefa\source\repos\SigmaJofotraAPICore\SigmaJofotraAPICore\obj\Release\net8.0\win-x64\staticwebassets.upToDateCheck.txt

@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "rJn2Idks9JWwo3yooCivxbobSB/9jYSNFRu/JsRv3t4=",
+  "Hash": "XjtkKteV0a/Neg3WuQLsjY9/iib5Hulas/squ2zNqb8=",
   "Source": "SigmaJofotraAPICore",
   "BasePath": "_content/SigmaJofotraAPICore",
   "Mode": "Default",
   "ManifestType": "Publish",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }
